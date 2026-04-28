@@ -1,0 +1,1614 @@
+                                Corporate Safety, Health and Environment
+                             Hazard Identification & Risk Assessment (HIRA)
+                                 Document Number: TML/SHE/HIRA/2025:1
+
+
+
+
+         Hazard Identification & Risk Assessment Standard
+
+
+
+
+       REVISION NUMBER                    DOCUMENT NUMBER              REVISION DATE
+                01                        TML/SHE/HIRA/2025.1              26/06/2020
+
+
+TATA MOTORS LIMITED-For Internal Circulation Only                                   Page 1 of 39
+                                Corporate Safety, Health and Environment
+                             Hazard Identification & Risk Assessment (HIRA)
+                                 Document Number: TML/SHE/HIRA/2025:1
+
+
+
+
+                                         STANDARD CONTROL
+
+      SUBJECT           COMMITTEE / OFFICE               NAME        SIGNATURE       DATE
+
+                      Chairman,Corporate
+                      Standard & Procedure          Vishal Badshah
+   Reviewed by                                                                    26/06/2020
+                      Sub-committee, Senior
+                      General Manager –JSR
+                      Chairman CV SHE Council
+   Approved by                                                                    18.09.2020
+                      President – CVBU              Girish Wagh
+
+                      Chairman PV SHE Council       Shailesh
+   Approved By                                                                    04/09/2020
+                       President-PVBU               Chandra
+                      Corporate Head,SHE &
+   Issued by
+                      Sustainability                Dr. Arun Kale                  7/13/2020
+
+
+
+
+TATA MOTORS LIMITED-For Internal Circulation Only                                Page 2 of 39
+                                Corporate Safety, Health and Environment
+                             Hazard Identification & Risk Assessment (HIRA)
+                                 Document Number: TML/SHE/HIRA/2025:1
+
+      FOLLOWING TEAM MEMBERS HAVE PREPARED & COMPILED THIS STANDARD
+              FORSTANDARDS & PROCEDURES CORPORATESUB-COMMITTEE
+
+
+  S. NO.       PLANT                NAME             DEPARTMENT                  E MAIL
+      1.    CVBU Pune       Hemant Anawkar          PE                anawkar@tatamotors.com
+      2.    CVBU Pune       Bimlesh Kumar           Safety            Bimlesh.Kumar@tatamotors.com
+      3.    Jamshedpur      Rajendra Sahoo          PPC-Frame         rajendra.sahoo@tatamotors.com
+      4.    CVBU Pune       PramodSawant            PE                pramod.sawant@tatamotors.com
+      5.    CVBU Pune       AshutoshShinde          Safety            Ashutosh.Shinde@tatamotors.co
+      6.                                                              m
+                                                                      madhusudan.devale@tatamotors.
+            CVBU Pune       MadhusudanDevale        PE
+      7.                                                              com
+            PVBU Pune       Sunil Bhambure          PV Works          sunil.bhambure@tatamotors.com
+      8.    CVBU Pune       PramodMulay             Engine            pramod.mulay@tatamotors.com
+      9.    Dharwad         Pavan Kulkarni          BIW, Frame        pavan.kulkarni@tatamotors.comm
+      10.   Lucknow         LavkeshDeshwal          Assembly Line     lavkesh.deshwal@tatamotors.com
+      11.   Sanand          SnehalChauhan           BIW               snehal.chauhan@tatamotors.com
+      12.   Pantnagar       Amit Saxena             ACC & CED-Paint   amit.saxena@tatamotors.com
+
+
+
+
+TATA MOTORS LIMITED-For Internal Circulation Only                                      Page 3 of 39
+                                Corporate Safety, Health and Environment
+                             Hazard Identification & Risk Assessment (HIRA)
+                                 Document Number: TML/SHE/HIRA/2025:1
+
+
+
+                                          ABBREVIATION
+
+
+TML           - Tata Motors Limited
+HIRA          - Hazard Identification & Risk Assessment
+OH&S          - Occupational Health & Safety
+OHS           - Occupational Health & Safety
+SHE           - Safety, Health & Environment
+EHS            - Environment, Health & Safety
+FIC           - Factory Implementation Committee
+MSDS          - Material Safety Data Sheets
+RPN           - Risk Priority Number
+LOTO          - Lock Out Tag Out
+PPE           - Personal Protective Equipment
+JSA           - Job Safety Analysis
+Take-2        - Talk Action Knowledge Equipment – Two minutes
+ALARP          - As low as reasonably practicable
+HIPO        - High Potential Occurrence
+SOP           -Standard Operating Procedure
+SMP            - Standard Maintenance Procedure
+WIS            - Work Instructions
+
+RPN            - Risk Prioritization Number
+ISO           - International Organization for Standardization.
+DC            - Domino Concern (series of accidents)
+
+LC            - Legal Concern
+E             - Emergency
+
+
+
+
+TATA MOTORS LIMITED-For Internal Circulation Only                             Page 4 of 39
+                                Corporate Safety, Health and Environment
+                             Hazard Identification & Risk Assessment (HIRA)
+                                 Document Number: TML/SHE/HIRA/2025:1
+
+       REVISION LOG (REVISION:01)
+
+
+ Sl.        Page        Clause             Old Version        New Version            Reason For
+ No         No.         Number &                                                     Change
+                        Title
+ 1          20          2.1 Scope          Compliance to      Compliance to          In line with ISO
+                                           OHSAS              ISO 45001:2018         45001:2018
+                                           18001:2007                                requirement
+ 2          22          5 –Definition      Hazards -          Hazard - Source,       In line with ISO
+                                           Source,            situation or an        45001:2018
+                                           situation or act   act with a             requirement
+                                           with a             potential that can
+                                           potential for      cause harm in
+                                           harm in terms      terms of human
+                                           of human           injury or ill health
+                                           injury or ill      or a combination
+                                           health or a        of these or
+                                           combination of     damage to
+                                           these.             property, or the
+                                                              environment,
+                                                              irrespective of
+                                                              human / animal
+                                                              harmed or not
+                                                              Hazards under
+                                                              three categories:
+                                                              1) Location
+                                                              Hazards.
+                                                              2) Equipment's
+                                                              Hazards.
+                                                              3) Activity
+                                                              Hazards.
+
+
+
+
+TATA MOTORS LIMITED-For Internal Circulation Only                                         Page 5 of 39
+                                Corporate Safety, Health and Environment
+                             Hazard Identification & Risk Assessment (HIRA)
+                                 Document Number: TML/SHE/HIRA/2025:1
+
+ Sl.       Page         Clause             Old Version        New Version        Reason For
+ No        No.          Number &                                                 Change
+                        Title
+ 3         23           5–                 Hazard             Hazard             In line with ISO
+                                           identification -   identification –   45001:2018
+                        Definition
+                                           Process of         Hazard             requirement
+                                           recognizing        identification
+                                           that a hazard      process involves
+                                           exists and         identifying both
+                                           defining its       existing and
+                                           characteristics    potential
+                                                              workplace
+                                                              hazards,
+                                                              assessing the
+                                                              risks,
+                                                              determining and
+                                                              implementing the
+                                                              controls, and
+                                                              reviewing
+                                                              hazards.
+                                                              Process of
+                                                              recognizing that
+                                                              a hazard exists
+                                                              and defining its
+                                                              characteristics
+
+
+
+
+TATA MOTORS LIMITED-For Internal Circulation Only                                     Page 6 of 39
+                                Corporate Safety, Health and Environment
+                             Hazard Identification & Risk Assessment (HIRA)
+                                 Document Number: TML/SHE/HIRA/2025:1
+
+ Sl.       Page         Clause             Old Version     New Version         Reason For
+ No        No.          Number &                                               Change
+                        Title
+ 4         23           5–                 ILL health -    ILL health –        In line with ISO
+                        Definition         Identifiable,   Adverse effect      45001:2018
+                                           adverse         on the physical,    requirement
+                                           physical or     mental or
+                                           mental          cognitive
+                                           condition       condition of a
+                                           arising from    person where,
+                                           and/or made     these adverse
+                                           worse by a      effects include
+                                           work activity   occupational
+                                           and/or work-    disease, illness
+                                           related         and death.
+                                           situation       Identifiable,
+                                                           adverse physical
+                                                           or mental
+                                                           condition arising
+                                                           from and/or
+                                                           made worse by a
+                                                           work activity
+                                                           and/or work-
+                                                           related situation
+
+
+
+
+TATA MOTORS LIMITED-For Internal Circulation Only                                   Page 7 of 39
+                                Corporate Safety, Health and Environment
+                             Hazard Identification & Risk Assessment (HIRA)
+                                 Document Number: TML/SHE/HIRA/2025:1
+
+ Sl.       Page         Clause             Old Version      New Version          Reason For
+ No        No.          Number &                                                 Change
+                        Title
+ 5         23           5–                 Risk             Risk assessment      In line with ISO
+                                           assessment -     – A risk             45001:2018
+                        Definition
+                                           Process of       assessment is a      requirement
+                                           evaluating the   thorough look at
+                                           risk arising     your workplace
+                                           from a hazard,   to identify those
+                                           taking into      things,
+                                           account the      situations,
+                                           adequacy of      processes, etc.
+                                           any existing     that may cause
+                                           controls, and    harm, particularly
+                                           deciding         to human /
+                                           whether or not   animal. After
+                                           the risk is      identification is
+                                           acceptable.      made, you
+                                                            analyze and
+                                                            evaluate how
+                                                            likely and severe
+                                                            the risk is. When
+                                                            this
+                                                            determination is
+                                                            made, you can
+                                                            next, decide
+                                                            what measures
+                                                            should be in
+                                                            place to
+                                                            effectively
+                                                            eliminate or
+                                                            control the harm
+                                                            from happening.
+                                                            Process of
+                                                            evaluating the
+                                                            risk arising from
+                                                            a hazard, taking
+                                                            into account the
+                                                            adequacy of any
+                                                            existing controls,
+                                                            and deciding
+                                                            whether or not
+                                                            the risk is
+                                                            acceptable
+
+
+
+
+TATA MOTORS LIMITED-For Internal Circulation Only                                     Page 8 of 39
+                                Corporate Safety, Health and Environment
+                             Hazard Identification & Risk Assessment (HIRA)
+                                 Document Number: TML/SHE/HIRA/2025:1
+
+ Sl.       Page         Clause             Old Version        New Version          Reason For
+ No        No.          Number &                                                   Change
+                        Title
+ 6         23           5–                 Workplace -                             In line with ISO
+                        Definition         Any physical       Workplace - Any      45001:2018
+                                           location in        physical location    requirement
+                                           which work         in which work
+                                           related            related activities
+                                           activities are     are performed
+                                           performed          under the control
+                                           under the          of the
+                                           control of the     organization
+                                           organization.      where a person
+                                                              needs to be or to
+                                                              go for work
+                                                              purposes
+
+ 7         23           5–                 Occupational       Occupational         In line with ISO
+                        Definition         health and         health and safety    45001:2018
+                                           safety (OH&S)      Management           requirement
+                                           - Conditions       System (OH&S)
+                                           and factors        - The intended
+                                           that affect, or    outcomes of the
+                                           could affect,      OH&S
+                                           the health and     management
+                                           safety of          system are to
+                                           employees or       prevent injury
+                                           other workers      and ill health to
+                                           (including         workers and to
+                                           temporary          provide safe and
+                                           workers and        healthy
+                                           contractor         workplaces.
+                                           personnel),        Conditions and
+                                           visitors, or any   factors that
+                                           other person       affect, or could
+                                           in the             affect the health
+                                           workplace          and safety of
+                                                              employees or
+                                                              other workers
+                                                              (including
+                                                              temporary
+                                                              workers and
+                                                              contractor
+                                                              personnel),
+                                                              visitors, or any
+                                                              other person in
+                                                              the workplace
+
+TATA MOTORS LIMITED-For Internal Circulation Only                                       Page 9 of 39
+                                Corporate Safety, Health and Environment
+                             Hazard Identification & Risk Assessment (HIRA)
+                                 Document Number: TML/SHE/HIRA/2025:1
+
+ Sl.       Page         Clause             Old Version       New Version          Reason For
+ No        No.          Number &                                                  Change
+                        Title
+ 8         23           5–                 RPN – While       RPN – The Risk       For More
+                        Definition         assessing the     Priority Number,     clarity on RPN
+                                           risk, the RPN     or RPN, is a         Definition
+                                           (Risk             numeric
+                                           Prioritization    assessment of
+                                           Number) will      risk assigned to
+                                           be the            a process, or
+                                           multiplication    steps in a
+                                           of Likelihood     process, numeric
+                                           (L) and           values that
+                                           Severity (S),     quantify risk.
+                                           where S is the    Risk
+                                           multiplication    Prioritization
+                                           of Scale, Level   Number will be
+                                           of harm & No      the multiplication
+                                           of People         of Likelihood (L)
+                                           Affected.         and Severity (S),
+                                           RPN =             where S is the
+                                           Likelihood X      multiplication of
+                                           Severity          Scale, Level of
+                                                             harm & No of
+                                           {Where
+                                                             People Affected.
+                                           Severity =
+                                           Scale of Risk     i.e. A.6 = A.3 X
+                                           X Level of        A.4 X A.5
+                                           Harm X No of
+                                           People
+                                           Affected
+
+
+
+
+TATA MOTORS LIMITED-For Internal Circulation Only                                      Page 10 of 39
+                                Corporate Safety, Health and Environment
+                             Hazard Identification & Risk Assessment (HIRA)
+                                 Document Number: TML/SHE/HIRA/2025:1
+
+ Sl.       Page         Clause             Old Version        New Version          Reason For
+ No        No.          Number &                                                   Change
+                        Title
+ 9         23           5–                 Over-riding        Over-riding          For More
+                        Definition         Criteria- All      Criteria- All OHS    clarity on Over-
+                                           OHS Risk,          Risk, irrespective   riding Criteria
+                                           irrespective of    of the application   Definition
+                                           the application    of thequantitative
+                                           of the             criteria is also
+                                           quantitative       evaluated for
+                                           criteria is also   application of
+                                           evaluated for      relevant
+                                           application of     qualitative
+                                           relevant           criteria. which
+                                           qualitative        include:Domino
+                                           criteria which     Concern (DC),
+                                           include:Domin      Legislative
+                                           o Concern          Concern (LC),
+                                           (DC),              Emergency (E)
+                                           Legislative        Risk with over-
+                                           Concern (LC),      riding criteria
+                                           Emergency          shall be
+                                           (E)                considered as a
+                                                              significant risk,
+                                                              which in the
+                                                              evaluator’s
+                                                              judgment,
+                                                              requires special
+                                                              consideration
+                                                              and need to
+                                                              check supervise
+                                                              or critically
+                                                              observe.
+
+
+
+
+TATA MOTORS LIMITED-For Internal Circulation Only                                       Page 11 of 39
+                                Corporate Safety, Health and Environment
+                             Hazard Identification & Risk Assessment (HIRA)
+                                 Document Number: TML/SHE/HIRA/2025:1
+
+ Sl.       Page         Clause             Old Version        New Version           Reason For
+ No        No.          Number &                                                    Change
+                        Title
+ 10        24           5–                 Unacceptable       Unacceptable          For More
+                        Definition         Risk – Risk        Risk – Risk that      clarity on
+                                           that cannot be     cannot be             Unacceptable
+                                           accepted           accepted              Risk Definition
+                                           whatever the       whatever the
+                                           level of benefit   level of benefit
+                                           gained from        gained from the
+                                           the activity-      activity-giving
+                                           giving rise to     rise to the risk.
+                                           the risk.          DC, LC & E
+                                                              Hazards will
+                                                              always fall in
+                                                              unacceptable
+                                                              category, which
+                                                              further need to
+                                                              take proper
+                                                              control measures
+                                                              to reduce the risk
+ 11        24           5–                          -         Risk Perception:      Risk
+                        Definition                            It is a subjective    Perception
+                                                              judgement that        Awareness
+                                                              people make
+                                                              about the
+                                                              characteristics
+                                                              and severity of
+                                                              the hazard by
+                                                              examining
+                                                              various
+                                                              parameters like
+                                                              weighing the
+                                                              evidence,
+                                                              reasoning skills,
+                                                              emotional skills
+                                                              etc. It can be
+                                                              also the way
+                                                              various people
+                                                              see the threat
+                                                              and examine it
+                                                              according to the
+                                                              various factors
+                                                              like trust, origin,
+                                                              awareness,
+                                                              dread,
+                                                              imagination etc
+
+TATA MOTORS LIMITED-For Internal Circulation Only                                        Page 12 of 39
+                                Corporate Safety, Health and Environment
+                             Hazard Identification & Risk Assessment (HIRA)
+                                 Document Number: TML/SHE/HIRA/2025:1
+
+ Sl.       Page         Clause             Old Version    New Version              Reason For
+ No        No.          Number &                                                   Change
+                        Title
+ 12        24           5–                          -     Risk Tolerance -         For more
+                        Definition                        The willingness of       clarity, was not
+                                                          a worker or a            there in
+                                                          group to take            Version 0
+                                                          safety risks. The
+                                                          cognitive process
+                                                          of deciding to
+                                                          proceed with the
+                                                          task or activity, to
+                                                          change how we do
+                                                          it, or to not do it at
+                                                          all. Do I accept or
+                                                          reject the risk?
+                                                          The 10 Influencing
+                                                          Factors for Risk
+                                                          Tolerance:
+                                                          1. Overestimating
+                                                          capability or
+                                                          experience.
+                                                          2. Familiarity with
+                                                          the task (or
+                                                          complacency).
+                                                          3. Seriousness of
+                                                          the outcome.
+                                                          4. Voluntary
+                                                          actions and being
+                                                          in control.
+                                                          5. Personal
+                                                          experience with a
+                                                          serious outcome.
+                                                          6. Cost of non-
+                                                          compliance.
+                                                          7. Over-confidence
+                                                          in the equipment.
+                                                          8. Overconfidence
+                                                          in personal
+                                                          protective
+                                                          equipment.
+                                                          9. Profit or gain
+                                                          from actions.
+                                                          10. Role models
+                                                          accepting risk
+
+
+
+
+TATA MOTORS LIMITED-For Internal Circulation Only                                       Page 13 of 39
+                                Corporate Safety, Health and Environment
+                             Hazard Identification & Risk Assessment (HIRA)
+                                 Document Number: TML/SHE/HIRA/2025:1
+
+ Sl.       Page         Clause             Old Version    New Version         Reason For
+ No        No.          Number &                                              Change
+                        Title
+ 13        25           6                           -     (Core Team          Procedure
+                        Procedure                         Must include at     Enhancement
+                                                          least: Section In
+                                                          charge, Line
+                                                          Supervisor,
+                                                          Operators).
+ 14        26           6 Procedure                 -     Step 1:             Procedure
+                                                          Preparation.        Enhancement
+                                                          Before you even
+                                                          begin, put
+                                                          together a risk
+                                                          assessment
+                                                          team to conduct
+                                                          Surveys and
+                                                          gather relevant
+                                                          information. ...
+                                                          Step 2: Hazard
+                                                          Identification.
+                                                          Identify hazards
+                                                          or potential
+                                                          incidents. ...
+                                                          Step 3: Risk
+                                                          Assessment. ...
+                                                          Step 4: Plan
+                                                          Control
+                                                          Measures. ...
+                                                          Step 5: Record
+                                                          Keeping. ...
+                                                          Step 6:
+                                                          Implementation
+                                                          and Review
+
+
+
+
+TATA MOTORS LIMITED-For Internal Circulation Only                                 Page 14 of 39
+                                Corporate Safety, Health and Environment
+                             Hazard Identification & Risk Assessment (HIRA)
+                                 Document Number: TML/SHE/HIRA/2025:1
+
+ Sl.       Page         Clause             Old Version            New Version             Reason For
+ No        No.          Number &                                                          Change
+                        Title
+ 15        28           6.3                The methodology                                Structured
+                        Methodolog         for hazard             Step 1: Preparation     Procedure &
+                        y for Hazard       identification and                             Methodology
+                        Identificatio      risk assessment        Step 2- Hazards         for HIRA
+                        n & Risk           shall be:              Identification          Process
+                        Assessment         • Defined with
+                                           respect to its         Step 3 – Risk
+                                           scope, nature and      Assessment
+                                           timing to ensure
+                                           that it is proactive   Step 4 – Plan Control
+                                           rather than            Measure /
+                                           reactive.              Recommendation
+                                           • Provide for the
+                                                                  Note- All steps are
+                                           identification,
+                                                                  mentioned in detail
+                                           prioritization and
+                                                                  under the clause
+                                           documentation of
+                                                                  number 6.3 in this
+                                           risks and the
+                                                                  standards
+                                           application of
+                                           controls, as
+                                           appropriate.
+                                           • For the
+                                           management of
+                                           change the
+                                           organizational
+                                           shall identify the
+                                           hazards and risks
+                                           associated with the
+                                           changes or its
+                                           activities prior to
+                                           introduction of
+                                           such changes.
+
+
+
+
+TATA MOTORS LIMITED-For Internal Circulation Only                                             Page 15 of 39
+                                Corporate Safety, Health and Environment
+                             Hazard Identification & Risk Assessment (HIRA)
+                                 Document Number: TML/SHE/HIRA/2025:1
+
+ Sl.No     Page         Clause Number      Old Version            New Version              Reason For
+           Number       & Title                                                            Change
+ 16        32                              Periodic auditing                               For more
+                        7.2. Audit         on Effectiveness of    Periodic auditing on     clarity on Audit
+                        Requirements       implementation of      Effectiveness of         Requirements
+                                           HIRA standard as       implementation of        for Hazard
+                                           part of procedure      HIRA standard as         Identification &
+                                           compliance             part of procedure        Risk
+                                           meeting the Tata       compliance meeting       Assessment
+                                           Motors standard        the Tata Motors          standards
+                                           on audit protocol.     standard on audit
+                                           Line managers to       protocol. Line
+                                           maintain list of       managers to maintain
+                                           control measures       list of control
+                                           plan for significant   measures plan for
+                                           risk and to be         significant risk to be
+                                           reviewed monthly.      reviewed monthly. In
+                                                                  reference to
+                                                                  significant hazards
+                                                                  and horizontal
+                                                                  deployment from
+                                                                  other plants against
+                                                                  incident recorded.
+
+ 17        36                                                                              Format
+                        A-8 List of                               Revised Format           Enriched by
+                        Activity Format    Old Format                                      adding Level of
+                                                                                           Risk
+ 18        37                              -                                               For
+                        A-10 HIRA                                 New added                Standardization
+                        Register Format                                                    of records
+
+ 19        38                              -                                               To Focus on
+                        A-11 Risk                                 New added                Behaviors
+                        Perception &                                                       Safety
+                        Tolerance Model
+
+
+
+
+TATA MOTORS LIMITED-For Internal Circulation Only                                               Page 16 of 39
+                                 Corporate Safety, Health and Environment
+                             Hazard Identification & Risk Assessment (HIRA)
+                                 Document Number: TML/SHE/HIRA/2025:1
+
+    User Notes:
+
+    Standards & ProceduresCorporate Sub-committee at Tata Motors is the custodian of this document
+    and is responsible for the Administration and Authorization of this Standard. It is also responsible
+    for confirming the accuracy and integrity of content and proposed changes to the Procedure.
+    Controlled copy of the current version of this document is held at “Mytatamotors/Policies/Corporate
+    Safety Policies/ Corporate Safety Standards & Procedures” website in the Corporate Safety
+    Policies, Standards and Procedures portal. Any printed / electronic copy of this document is
+    uncontrolled. It is recommended that users verify that the version being used by them is the current
+    version by referring to the controlled version (Uploaded in the above link).
+
+
+
+    Document Control:-
+
+
+    Any SHE document released by Corporate SHE shall be numbered as XXXX.Y
+    The first “X” shall be a numeric character and can vary from 1 to 4 indicating level of document.
+    The first level document (starting from 1XXX) shall be SHE Policy / Principles etc.
+
+     The second level document (starting from 2XXX) shall be Corporate SHE Standards/Norms;
+    The third level document (starting from 3XXX) shall be Corporate SHE Procedures;
+    The fourth level of document shall be represented as “4XXX” indicating forms and formats.
+    The other three X (XXX) shall be numeric character and will vary from 001 to 999 indicating
+    document number.
+    The “Y” after dot sign (.) shall represent current revision status of document. Any changes in this
+    document can be initiated by any individual as approved by SHE Council, through Corporate
+    Standard & Procedure Sub-committee Chairman and shall be issued from the office of the
+    Corporate Head- Safety, Health & Environment.
+
+
+
+
+TATA MOTORS LIMITED-For Internal Circulation Only                                               Page 17 of 39
+                                Corporate Safety, Health and Environment
+                             Hazard Identification & Risk Assessment (HIRA)
+                                 Document Number: TML/SHE/HIRA/2025:1
+
+                                               CONTENTS
+     S. No.                                     Description                          Page
+       1        INTRODUCTION                                                          19
+                1.1. Intent and Purpose                                               19
+       2        SCOPE AND FIELD OF APPLICATION                                        20
+                2.1. Scope                                                            20
+                2.2. Field of Application                                             20
+       3        REFERENCES                                                            21
+       4        RESPONSIBILITIES                                                      22
+       5        DEFINITIONS                                                           22
+       6        PROCEDURE                                                             25
+                6.1 Hazards & Risks                                                   26
+                6.2 Guidelines for HIRA                                               27
+                6.3 Methodology for hazard identification and risk assessment         28
+                6.3.1 Hazard Identification                                           28
+                6.3.2 Risk Assessment                                                 29
+                6.3.3 Plan Control Measures / Recommendation                          30
+                6.3.4 Corrective Actions                                              30
+                6.3.5 Review and Improve                                              31
+                6.3.6 Documenting the OHS Risk Management Process                     31
+       7        MANAGEMENT SYSTEMS                                                    32
+                     7.1 Management Records                                           32
+                     7.2 Audit Requirements:                                          32
+                     7.3 Standard/Procedure Renewal Process                           32
+                     7.4 Deviation Process                                            32
+                     7.5 Training and Communication Requirements                      32
+                     7.6 Contact                                                      32
+   Annexure     A.1     Type Of OHS Hazard                                            33
+                A.2     Determining Risk Likelihood                                   34
+                A.3     Determining Scale Of Risk                                     34
+                A.4     Determining Level Of Harm                                     34
+                A.5     Determining Number Of People Affected                         35
+                A.6     Risk Levels Based On Risk Priority Number (RPN)               35
+                A.7     Level Of Risks                                                35
+                A-8 – HIRA Activities Format                                          36
+                A-9 – HIRA Format                                                     37
+                A-10 – HIRA Register                                                  37
+                A-11- Risk Perception +Tolerance Model                                38
+
+
+TATA MOTORS LIMITED-For Internal Circulation Only                               Page 18 of 39
+                                  Corporate Safety, Health and Environment
+                              Hazard Identification & Risk Assessment (HIRA)
+                                  Document Number: TML/SHE/HIRA/2025:1
+
+1. INTRODUCTION AND OBJECTIVE:
+    Risks involved in the jobs and tasks are not generally well established and therefore a set of
+    standards as well as procedures are required to analytically assess the risks involved in any type of
+    jobs and tasks. This helps in executing jobs at the acceptable level of risk. Hazard Identification and
+    Risk Assessment (HIRA) is a collective tool that incorporates all activities involved in identifying
+    hazards and evaluating risk at facilities, throughout their life cycle. This is to make certain that risks
+    to employees, to the public, or to the environment are consistently controlled within the
+    organization’s risk tolerance. Thisassessment typically address four main risk questions to a level
+    of detail proportionate. The main four risk questions are:
+
+
+    Hazard             - What can go wrong?
+    Consequences - How bad could it be?
+    Likelihood         - How often might it happen?
+    Controls - Effectiveness of existing controls.
+HIRA is a process that consists of a number of sequential steps such as hazard identification, consequence
+& frequency assessment, risk estimation based on the existing controls and recommendations to reduce
+those risks, which are not under acceptable limits.
+Objective of HIRA study is to:
+
+      Carryout a systematic, critical appraisal of all potential hazards involving personnel, plant, services
+       and operation methods
+      Identify the existing safeguards available to control the risks due to the hazards
+      Suggest additional control measures to reduce the risk to acceptable level
+      Prepare a Risk Register that will help in continuously monitoring these risks, detect any changes and
+       ensure the controls are effective.
+
+    1.1 Intent & Purpose:
+    This standard is developed by an inter-Plant/Location workgroup with guidance of experts. The
+    requirements of this standard that have been identified here are equally applicable across all
+    locations. This will help in bringing about a consistency in the process used across all locations.
+    These guidelines will help to provide a new impetus towards achieving the best in class safety
+    standards. This release of the document is formulated based on world-class practices.
+    Comments and feedback would be appreciated to further enhance this process. All such comments
+    andfeedback may be addressed to the Secretary, Corporate Standards and Procedures Sub
+    Committee. Thecomments and feedback would be consolidated and shall be used during the
+    Review and revision of futurereleases.
+
+
+TATA MOTORS LIMITED-For Internal Circulation Only                                                   Page 19 of 39
+                                 Corporate Safety, Health and Environment
+                             Hazard Identification & Risk Assessment (HIRA)
+                                 Document Number: TML/SHE/HIRA/2025:1
+
+   This standard provides the procedure:
+
+    For identification of on-going occupational health and safety (OHS) hazards / risks of organizations
+     process, activities, products and services.
+
+    For Risk assessment to determine the risk managementmeasures.
+
+    To establish OHS management systems including OHS objectives and /or operational controls based
+     on results of HIRA.
+
+    To keep this information up to date
+
+2. SCOPE AND FIELD OF APPLICATION:
+
+    2.1 Scope:
+    The Standard provides the methods for the Risk Assessments for compliance to ISO 45001:2018.
+    It also defines where each of the Risk Assessment techniques (HIRA, JSA with TAKE 2) are to be
+    used. There are local/ state/ national regulations in place to carry out Risk Assessments.
+    Businesses/Plants should be aware that local regulations might impose conditions not reflected in
+    this standard. Additional information on regulations comes from a number of sources, including
+    Statutory/Regulatory Documents. Any question regarding the interpretation of this standard in
+    respect of mandatory versus non-mandatory should be referred to the Corporate Standards and
+    Procedures Sub Committee for clarification. The scope of this standard applies to all activities being
+    done across facilities of TML.
+
+
+    2.2 Field of Application:
+
+    This standard applies to all Employees, including Vendors, contractors, Trainees, flexi employees,
+    temporary employees and visitors in all TML plants / Business locations where TML has
+    supervisory/operational control. The plant / Business management must ensure that all work activity
+    over which they have supervisory or operational control is subjected to a systematic assessment of
+    risks and that safe systems of work are in place to control any remaining risks that have not been
+    completely eliminated. The requirements, which have been identified in this standard, are equally
+    applicable across all plant locations of TML. This will also help in bringing about a consistency in
+    the process used across all locations.
+
+
+
+
+TATA MOTORS LIMITED-For Internal Circulation Only                                                Page 20 of 39
+                                Corporate Safety, Health and Environment
+                             Hazard Identification & Risk Assessment (HIRA)
+                                 Document Number: TML/SHE/HIRA/2025:1
+
+
+
+3 REFERENCES:
+
+
+3.1 TML Safety Policy and Principles
+
+
+3.2 TML Safety Standards:
+
+
+
+    TML Standard on Incident Investigation
+    TML Standard for Safety Observation
+    TML Standard for Contractor Safety Management
+    TML Standard on PPE
+    TML Standard on Safe Driving and Vehicle & Traffic Safety
+    TML Standard on LOTO
+    TML Standard on Electrical Safety Management System
+    TML Standard on Working at Height
+    TML Standard on Fire Safety Management System
+    TML Standard on Permit to Work and Hot Work
+    TML Standard on Management of Change
+    TML Standard on Lifting and Supporting of Loads
+    TML Standard on Job Safety Analysis with take two
+    TML Standard for Emergency Preparedness
+    TML Standard for Machine Guarding
+    TML Standard for Confined Space Entry
+    TML Standard for Material Handling & Storage
+
+
+
+
+3.3 Other References:
+
+    ISO 45001:2018
+    All Relevant Legislative Indian Acts, Rules and Regulations
+    All Relevant Indian Standards
+
+
+
+TATA MOTORS LIMITED-For Internal Circulation Only                             Page 21 of 39
+                                 Corporate Safety, Health and Environment
+                             Hazard Identification & Risk Assessment (HIRA)
+                                 Document Number: TML/SHE/HIRA/2025:1
+
+4 RESPONSIBILITIES:
+Line management has the responsibility to implement this standard. They will ensure that the personnel
+involved in activities for risk assessment are familiar with and comply with the mandatory requirements
+of thisstandard.Operators and Line managers must take the decision based on HIRA to stop the work /
+ask for advice, in case ofunacceptable risk or missing competences in the HIRA team. Line Managers,
+will be supported by the senior managementand recognized as being proactive to avoid serious
+incidents.
+All Line Managers and their team dealing in Risk assessment are responsible for adhering to the
+standardduring related activities. The teams include cross functional group of employees from operation,
+design, planning, maintenance, material, contractor / contracted employees, visitors, vendorswho may
+beinvolved in the risk assessment.The team can refer to any subject matter expert if need so arise.
+
+
+5 DEFINITIONS:
+    Hazard- Source, situation or an act with a potential that can cause harm in terms of human injury
+    or ill health or a combination of these or damage to property, or the environment, irrespective of
+    human / animal harmed or not
+    Hazards under three categories:
+       1) Location Hazards.
+       2) Equipment's Hazards.
+       3) Activity Hazards.
+
+    Hazard identification - Hazard identification process involves identifying both existing and potential
+    workplace hazards, assessing the risks, determining and implementing the controls, and reviewing
+    hazards.Process of recognizing that a hazard exists and defining its characteristics
+
+    Risk - Combination of the likelihood of an occurrence of a hazardous event or exposure(s) and the
+    severity of injury or ill health that can be caused by the event or exposure.
+
+    Incident - An unplanned or an unusual event or a series of events and circumstances that resulted
+    in or had the potential that could result in, an adverse or undesirable safety, health, fire and
+    environmental consequence. Undesirable consequences related to SHE incidents include, but are
+    not limited to the Following:
+•   Injuries and Occupational illnesses
+•   Process Safety
+•   Environmental Release
+•   Property damage
+•   Fire
+•   Distribution
+
+
+TATA MOTORS LIMITED-For Internal Circulation Only                                                Page 22 of 39
+                                 Corporate Safety, Health and Environment
+                             Hazard Identification & Risk Assessment (HIRA)
+                                 Document Number: TML/SHE/HIRA/2025:1
+
+    ILL health–Adverse effect on the physical, mental or cognitive condition of a person where, these
+    adverse effects include occupational disease, illness and death.Identifiable, adverse physical or
+    mental condition arising from and/ormade worse by a work activity and/or work-related situation
+
+    Risk assessment –A risk assessment is a thorough look at your workplace to identify those things,
+    situations, processes, etc. that may cause harm, particularly to human / animal. After identification
+    is made, you analyze and evaluate how likely and severe the risk is. When this determination is
+    made, you can next, decide what measures should be in place to effectively eliminate or control the
+    harm from happening.Process of evaluating the risk arising from a hazard, taking into account the
+    adequacy of any existing controls, and deciding whether or not the risk is acceptable.
+
+    Workplace - Any physical location in which work related activities are performed under the control
+    of the organization where a person needs to be or to go for work purposes
+
+    NOTE - When giving consideration to what constitutes a workplace, the organization should take
+    into account the OH&S effects on personnel who are, for example, travelling or in transit (e.g.
+    driving, flying, on boats or trains), working at the premises of a client or customer, or working at
+    home.
+
+    Occupational health and safety Management System (OH&S) - The intended outcomes of the
+    OH&S management system are to prevent injury and ill health to workers and to provide safe and
+    healthy workplaces. Conditions and factors that affect, or could affect the health and safety of
+    employees or other workers (including temporary workers and contractor personnel), visitors, or any
+    other person in the workplace.
+
+    RPN – The Risk Priority Number, or RPN, is a numeric assessment of risk assigned to a process, or
+    steps in a process, numeric values that quantify risk. Risk Prioritization Number will be the
+    multiplication of Likelihood (L) and Severity (S), where S is the multiplication of Scale, Level of harm&
+    No of People Affected.
+    i.e.A.6 = A.3 X A.4 X A.5
+
+    Over-riding Criteria-All OHS Risk, irrespective of the application of the quantitative criteria is also
+    evaluated for application of relevant qualitative criteria. Risk with over-riding criteria shall be
+    considered as a significant risk, which in the evaluator’s judgment, requires special consideration
+    and need to check supervise or critically observe.
+    Which include:
+    Domino Concern (DC) - Operations and processes, which can trigger or multiply the risks those
+    are of increasing magnitude and create potential emergency conditions.
+
+
+    Legislative Concern (LC) - Any OHS hazards or risks covered by existing and applicable EHS
+    legislation and other notifications issued from time to time.
+
+
+
+
+TATA MOTORS LIMITED-For Internal Circulation Only                                                 Page 23 of 39
+                                 Corporate Safety, Health and Environment
+                              Hazard Identification & Risk Assessment (HIRA)
+                                 Document Number: TML/SHE/HIRA/2025:1
+
+    Emergency (E) - An emergency is defined, as “an unplanned event that may adversely impact or
+    threaten life, health or property on a large scale at one or more locations within the Factory or Office
+    premises and control of the incident would require specialists and external supports”.
+
+
+    Routine (R) - Activities those are the part of day-to-day process are termed as Routine ‘R’
+    Note - Day to day or frequent activities, which are perform by our regular workforce and being
+    executed as per plan or schedule. In addition, such activities must have SOP, SMP, or WIS.
+
+
+    Non-Routine (NR) - Activities those are once in a while as on when requirement arises are to
+    betermed as Non Routine ‘NR’. Non-Routine activities and situations are occasional or unplanned;
+    Note – Where aSOP, SMP, or WIS is not available or the conditions of the SOP or SMP or WIS
+    have changed. In case of Non-routine, activities please refer Take-2, JSA Standard and Permits to
+    workStandards.
+
+
+    Severity- The level of consequence / harm of an event that could occur due to exposure to the
+    hazard present.
+
+
+    Likelihood – Probability of an occurrence of a hazardous event
+
+    HIPO–HIPO (High Potential) incident may be a near miss, property damage or any other dangerous
+    occurrence such as collapse/ fall of any equipment or structure, bursting/ explosion of vessel or tank,
+    large spills which does not result in injury to person but which poses a risk to life of people in vicinity
+    and has potential to cause serious injury.
+
+    Acceptable Risk– Risk that has been reduced to a level that can be tolerated by the organization
+    having regard to its legal obligations and its own.
+
+    Unacceptable Risk–Risk that cannot be accepted whatever the level of benefit gained from the
+    activity-giving rise to the risk. DC, LC & E Hazards will always fall in unacceptable category, which
+    further need to take proper control measures to reduce the risk
+
+
+    Risk Perception:It is a subjective judgement that people make about the characteristics and
+    severity of the hazard by examining various parameters like weighing the evidence, reasoning skills,
+    emotional skills etc. It can be also the way various people see the threat and examine it according
+    to the various factors like trust, origin, awareness, dread, imagination etc.
+
+
+    Risk Tolerance- The willingness of a worker or a group to take safety risks. The cognitive process
+    of deciding to proceed with the task or activity, to change how we do it, or to not do it at all. Do I
+    accept or reject the risk?
+
+
+TATA MOTORS LIMITED-For Internal Circulation Only                                                  Page 24 of 39
+                                  Corporate Safety, Health and Environment
+                              Hazard Identification & Risk Assessment (HIRA)
+                                  Document Number: TML/SHE/HIRA/2025:1
+
+
+
+    The 10 Influencing Factors for Risk Tolerance:
+    1. Overestimating capability or experience.
+    2. Familiarity with the task (or complacency).
+    3. Seriousness of the outcome.
+    4. Voluntary actions and being in control.
+    5. Personal experience with a serious outcome.
+    6. Cost of noncompliance.
+    7. Overconfidence in the equipment.
+    8. Overconfidence in personal protective equipment.
+    9. Profit or gain from actions.
+    10. Role models accepting risk
+
+
+    Direct – OHS Hazards on account of activities of Tata Motors employees / equipment are to be
+    listed as “Direct’ ’D’
+
+
+    Indirect - OHS Hazards of activities, those by Contractor employees / equipment are to be listed
+    as “Indirect” ‘I’ such as visitors / contractors / suppliers / transporters etc.
+
+
+6 Procedure
+
+    Factory head / Shop head /Dept. head shall ensure that hazard identification & risk assessment of
+    all processes, activities & sub activities are carried out. Bay owner/ Line in charge shall form a team
+    to carryout HIRA study. (Core Team Must include at least: Section In charge, Line Supervisor,
+    Operators).
+    The team shall select process for HIRA. The team shall list down activities/ sub activities of selected
+    process. All the activities shall be listed down one below other in rows in HIRA format (A-8). Each
+    activity shall be selected and analyzed column wise. First list out type of OHS hazard as per table
+     A-1. Team shall describe the hazard associated with this activity by using table A-1. Team shall
+    decide who shall get affected and write in column-4 of HIRA format. Depending upon the impact on
+    the person, who are performing the activity;the team shall select the condition as direct or
+    indirectandindicate whether the process is routine or non-routine.
+
+
+    The team shall now select the overriding criteria depending upon the concern of legal or domino or
+    emergency. This shall be followed by listing down existing control measures to mitigate the hazards
+    and gaps between controls & hazards. The team shall select the hazard as injury or ill health based
+    on the activity.
+
+TATA MOTORS LIMITED-For Internal Circulation Only                                                 Page 25 of 39
+                                 Corporate Safety, Health and Environment
+                              Hazard Identification & Risk Assessment (HIRA)
+                                 Document Number: TML/SHE/HIRA/2025:1
+
+
+
+    Team shall carryout the important part of risk assessment by using annexure. For likelihood of
+    hazard annexure A-2. For scale of hazard annexure A-3. For level of harm annexure A-4 and for
+    number of people affected annexure A-5. The team shall then calculate the Risk Priority Number
+    (RPN) as per the formula. The team shall then describe the level of risk as per table A-7.
+    Based on Risk Priority Number the team in consultation with factory head shall take required Risk
+    Control Measures.
+Step 1: Preparation. Before you even begin, put together a risk assessment team to conduct
+        Surveys and gather relevant information. ...
+Step 2: Hazard Identification. Identify hazards or potential incidents. ...
+Step 3: Risk Assessment. ...
+Step 4: Plan Control Measures. ...
+Step 5: Record Keeping. ...
+Step 6: Implementation and Review
+
+    6.1. Hazards and Risks
+
+    The basic principle of Safety mandates that hazards at workplace are kept to the minimum & the
+    risk to theemployees exposed is negligible or at acceptable level. In order to ensure that employees
+    are given a Riskfree environment, a safe system of procedures / work-practice is to be adopted &
+    tools and equipment needto satisfy these safe conditions for working.It is, therefore, absolutely
+    essential to have procedures for,
+    • Identification of Occupational health and safety hazards / risks of all activities during manufacturing
+     and other services including management of change.
+    • Undertaking risk assessment to determine the level of risk
+    • Establishing control measures to ensure that the risks are under the acceptable level
+      beforeundertaking the activity.
+
+    Hazard Identification and Risk Assessment (HIRA) is a structured systemunder ISO 45001-2018
+    that has been well established and practiced over the years at TML.HIRA includes all risks to all
+    aspects of any work and would consider the exposure, severity and probabilityin terms of
+    quantifiable numbers.
+    Whether a full scale HIRA is required or JSA with Take-2 will suffice for the job to be undertaken
+    needsto be clearly defined in order to avoid confusion and subjective decision making by the line
+    manager.The following guidelines will be useful in determining when exactly HIRA is required.
+
+
+
+
+TATA MOTORS LIMITED-For Internal Circulation Only                                                   Page 26 of 39
+                                 Corporate Safety, Health and Environment
+                              Hazard Identification & Risk Assessment (HIRA)
+                                 Document Number: TML/SHE/HIRA/2025:1
+
+     A formal HIRA, as per TML procedure under is required for
+
+        •   All activities (R & NR) shall be carried out prior to finalizing any Standard Operating
+            Procedure(SOP) and Standard MaintenanceProcedure (SMP)
+        •   When an existing job has been changed significantly
+        •   When there is a change in specific Regulatory or SHE Standards
+        •   When there are changes in Technology, modification, alteration and installation
+        •   After an incident or injury has occurred. – After the incident it will be reviewed
+
+
+
+
+     6.2 Guidelines for HIRA
+
+
+     The organization shall establish, implement and maintain a procedure(s) for the ongoing hazard
+     identification, risk assessment, and determination of necessary controls.
+
+     The procedure(s) for hazard identification and risk assessment shall take into account:
+
+a) Routine and non-routine activities;
+b) Activities of all persons having access to the workplace (including contractors and visitors);
+c) Human behaviour, capabilities and other human factors;
+d) Identified hazards originating outside the workplace capable of adversely affecting the health and
+   safety of persons under the control of the organization within the workplace;
+e) Hazards created in the vicinity of the workplace by work-related activities under the control of the
+   organization;
+f) Infrastructure, equipment and materials at the workplace, whether provided by the organization or
+   others;
+g) Changes or proposed changes (Temporary or Emergency) in the organization, its activities, or
+   materials;
+h) Modifications to the OH&S management system, including temporary changes, and their impacts
+   on operations, processes, and activities;
+i) Any applicable legal obligations relating to risk assessment and implementation of necessary
+   controls.
+j) The design of work areas, processes, installations, machinery/equipment, operating procedures
+   and work organization, including their adaptation to human capabilities.
+
+
+
+
+TATA MOTORS LIMITED-For Internal Circulation Only                                              Page 27 of 39
+                                Corporate Safety, Health and Environment
+                             Hazard Identification & Risk Assessment (HIRA)
+                                 Document Number: TML/SHE/HIRA/2025:1
+
+   6.3 Methodology for hazard identification and risk assessment :
+
+    The methodology for hazard identification and risk assessment shall be:
+
+
+    Here are six steps to guide you through how to conduct a HIRA assessment.
+
+    Step 1: Preparation
+
+    Before you even begin, put together a risk assessment team to conduct surveys and gather relevant
+    information. They represent the people in the Shop and make informed decisions about the overall
+    safety of the shop. They also provide a valuable avenue for feedback because the worries and
+    concerns of the shop personnel are highlighted. This makes it easier to ensure their safety once a
+    problem has been identified.
+   The risk assessment team will:
+
+      tour the shop with their eyes peeled for potential hazards
+      assess how well safety precautions are followed (usually documented by taking notes and photos)
+      Make sure the safety equipment is in its proper place.
+      have regular meetings to evaluate safety plans in the shop
+      ensure everyone has access to all safety protocols
+
+       They are also entrusted with the incident task of making a detailed list of incidents that happened
+       within the past year.
+       Something bothering you in the shop? A piece of equipment look suspiciously broken, but you are
+       notsure. Talk to a member of the risk assessment team. They are always more than happy to talk to
+       you about your safety concerns in the shop.
+
+       6.3.1 -Step 2: Hazard Identification
+       Identify hazards or potential incidents. There a thousand things that could go wrong in the shop—
+       you just have to list them all out in advance (do note that paper cuts are not counted as actual
+       hazards). Take the information gathered by the risk assessment team and list out all the known
+       hazards in the shop.
+           Learning from Incidents and injury reports received.
+
+           Review records of Horizontal Deployment from Other plants and own Plant
+
+           Review Facts and gathering from Incidents
+
+       •    Asking employees what they think
+       •    Visiting the industry areas on of the HSE website
+       •    Checking manufactures instructions on equipment’s
+
+           Contacting trade associations
+
+TATA MOTORS LIMITED-For Internal Circulation Only                                              Page 28 of 39
+                                 Corporate Safety, Health and Environment
+                             Hazard Identification & Risk Assessment (HIRA)
+                                 Document Number: TML/SHE/HIRA/2025:1
+
+           Inputs from Safety Portal
+
+           Also, include special, ad hoc or extraordinary events e.g. emergencies, abnormal activity.
+
+           Inputs from Near miss capturing, MSDS, Information through TML Corporate circulars,
+            MOC, OEM catalogues.
+           Inputs from visit register of Inspector of Factories, Controller of Explosives, and Electrical
+            Inspectorate personnel.
+           Records of monitoring the working conditions of equipment
+
+           Records of preventive and breakdown of equipment relating to safety and health issues (e.g.
+            Frequency of failure of fume extractors)
+
+       6.3.2Step 3: Risk Assessment
+       A risk assessment is the process of looking for hazards that have the potential to harm people.
+       This can be in the objects being used, work environment and / or work processes adopted. Some
+       risks are visible; others are only evident and able to be understood when a work task is observed.
+       The use of a risk matrix assists the manager to better understand the severity of risk, which in
+       turn enables managers to prioritize which hazards to address first. The risk matrix requires
+       managers to consider the consequence of the potential harm and the likelihood of the harm
+       occurring.
+       Risk assessment is the product of likelihood and severity.
+       Deduce the risk level of each of the hazards you have listed and prioritize them according to which
+       is more serious and more likely to happen.
+       You can use a table known as a risk matrix to help determine the risk level. A risk matrix provides a
+       quick view of both the likelihood and the severity of the consequences. Both factors are given a
+       rating as per Annexure below (A.1…A3) and the subsequent result places the risk in one of these
+       categories: Extreme, High Risk, Medium, and Low Risk.
+       Consider those that fall under ‘extreme’ as high priority, and make plans to have the risk eliminated.
+       In contrast, ‘low risk’ poses no significant problem, but you can take action through administrative
+       measures to create a more optimal workflow or working environment.
+       Likelihood is the probability of occurrence of incident. The likelihood considers the chance that
+       the hazard will eventuate in an injury / illness. When considering likelihood managers should
+       also consider:
+   •   Scale of risk
+   •   How long people are exposed to the hazard;
+   •   The numbers of people exposed to the hazard.
+   •   Severity is the product of the parameters - scale of harm, level of harm and number of people
+       affected.
+
+
+
+TATA MOTORS LIMITED-For Internal Circulation Only                                                Page 29 of 39
+                                 Corporate Safety, Health and Environment
+                              Hazard Identification & Risk Assessment (HIRA)
+                                 Document Number: TML/SHE/HIRA/2025:1
+
+       6.3.3 Step 4: Plan Control Measures / Recommendation
+       Now that you have identified the risks and the likelihood of each hazard occurring, set control
+       measures to prevent, or at least reduce, the chance of an incident-taking place in the shop. There
+       are five control measure categories: elimination, substitution, engineering controls, administrative
+       controls, and PPE (in decreasing order of effectiveness).
+       For example:
+       Elimination control. When the risk is extremely high, completely remove the hazard from the shop.
+       Substitution control. Find a safer alternative to the hazardous chemical/material/equipment that
+       you have.
+       Engineering controls. A good example would be a biological safety cabinet, which is an enclosed
+       ventilated shop oratory workspace designed to protect the user from being exposed to pathogens
+       Administrative controls. Your shop access card is keeping you and others safe by not letting
+       unauthorized people into your potentially hazardous work area (especially since they would not
+       have had any safety training)
+       PPE. Your standard Apron, gloves, Helmet, shoes, earplugs, goggles, etc.
+
+       Step 5: Record Keeping
+       Always keep records of all risk assessment reports (right from step 1) and update records when
+       new information is available. Documentation can also include: photographs of bad safety practices,
+       shopincident sites, feedback from staff, and a record of the safety clearances obtained and safety
+       trainings attended by shop members.
+
+       Step 6: Implementation and Review
+       Now that you have completed all the stages, it is time to put them into action!
+          Note that all new preventative measures should be implemented only once the risk assessment
+       team obtains approval from the shop manager. Conduct a meeting a month or two after
+       implementing the new safety measures to review their efficiency. Also, get regular feedback from
+       shop staff to keep all safety measures relevant.
+
+
+   6.3.4 Corrective actions
+
+    Corrective actions shall be planned to reduce the risk level in reference with the Risk priority number.
+    This helps in monitoring the hazard control process. List of all corrective actions shall be identified
+    through risk assessment, work site inspection or incident report. Monitoring of corrective actions
+    should be done on a regular basis through management or department meetings.
+    When deciding on periods for the implementation of controls, consideration shall be given to both,
+    high risk and lower risk hazards when setting priorities. List what controls are already in place to
+    reduce the likelihood of harm or make any harm less serious. Some controls may be easily
+    implemented or require little or no expense - these should be implemented quickly. OHS corrective
+
+TATA MOTORS LIMITED-For Internal Circulation Only                                                  Page 30 of 39
+                                 Corporate Safety, Health and Environment
+                             Hazard Identification & Risk Assessment (HIRA)
+                                 Document Number: TML/SHE/HIRA/2025:1
+
+    actions, which are not implemented immediatelyshould have interim short-termaction plan to bring
+    down the risk to acceptable level. The corrective actions should be clearly written down, so that
+    others can easily understand them. New persons accessing the document, should be able to
+    determine required control action, status of the action, due date to implement the action andperson
+    responsible for the action.
+
+
+
+
+    6.3.5 Review and Improve
+
+    This stage of the OHS risk management process involves, reviewing and improving existing OHS
+    risk control systems. A systematic evaluation and review schedule should be prepared to identify
+    new potential hazards and to check how effective existing controls are. This process should prioritize
+    and deal with hazards that are high risk and have serious consequences.
+    The HIRA shall be reviewed at least once in a six (6) month or based on the following that may
+    impact OH & S: -
+      1. Incident or accident or ill health
+      2. Amendments to existing statutory regulations or new regulations, if any.
+      3. Interested parties concerns
+      4. Audit observations
+      5. New processes, Equipment’s, storage facilities, installations or changes
+      6. Changes to product, activity, or service
+      7. New product / model development
+      8. Changes in the existing control
+      9. Change to processes or layout
+      10. Raw material substitution, Change of chemicals
+      11. Changes to existing procedures e.g. SOP, SMP or WIS.
+      12. During MOC (Management of Change)
+      13. Completion of OHS objectives &programme
+
+
+
+    6.3.6 Documenting the OHS risk management process
+
+    OHS hazards and associated risks document shall include:
+
+•   List of process/activities (Format to be prepared)
+•   HIRA register
+•   Prioritization of Significant OHS Risk
+•   Revision sheets / document amendment records
+
+
+TATA MOTORS LIMITED-For Internal Circulation Only                                                Page 31 of 39
+                                 Corporate Safety, Health and Environment
+                             Hazard Identification & Risk Assessment (HIRA)
+                                 Document Number: TML/SHE/HIRA/2025:1
+
+    7. MANAGEMENT SYSTEMS
+
+           7.1. Management of Records:
+    Records shall be retained in compliance with the Corporate Records and Information Management
+    Program. (To be provided by Corporate SHE).
+
+    7.2. Audit Requirements:
+
+    Periodic auditing on Effectiveness of implementation of HIRA standard as part of procedure
+    compliance meeting the Tata Motors standard on audit protocol. Line managers to maintain list of
+    control measures plan for significant risk to be reviewed monthly. In reference to significant hazards
+    and horizontal deployment from other plants against incident recorded.
+
+    7.3. Standard Renewal Process
+
+    The standard shall be reviewed and revised as necessary and at a minimum, not later than 3 years
+    fromthe date of the last revision.
+
+    7.4. Standard Deviation Process
+
+    The Plant Head / Business Head must authorize deviations from this standard for the relevant
+    location after consultation with the Corporate SHE and no- objection from the Corporate
+    SHECouncil. Deviations must be documented, and documentation must include the relevant facts
+    supportingthe deviation decision. Deviation authorization must be renewed periodically and no less
+    frequently thanevery three months.
+
+    7.5. Training and Communications Requirements
+
+    Various personnel connected with the preparation and use of procedure for risk assessment shall
+    be trained as per procedure.Plant Training sub-committee shall facilitate the trainingand validation
+    and ensure that all relevant employees, including employees of contractors are
+    covered.Management at all levels must undergo standard training module on HIRA.All users shall
+    be trained and validated by the trained management personnel. Line management must ensure that
+    the supervisors and employees of contractors are provided practicaltraining required for the
+    job/task.The    standard     training   presentation  will  carry      the    document      number
+    TML/SHE/2015/HIRA/TA-1.
+
+    7.6. Contact
+
+    The contact for this procedure will be the Corporate / Plant Standards and Procedures sub-
+    committee.
+
+TATA MOTORS LIMITED-For Internal Circulation Only                                                Page 32 of 39
+                                Corporate Safety, Health and Environment
+                             Hazard Identification & Risk Assessment (HIRA)
+                                 Document Number: TML/SHE/HIRA/2025:1
+
+
+
+
+     A.1      TYPE OF OHS HAZARD
+              (Indicative list only)
+SN      Type of OHS Hazard         Description of Hazard
+1    Gravity                        Fall, slip, trip, overturning of machine, trollies
+2    Machinery / Tool              Moving parts, sharp edge, breakage or shock loading, flying objects,
+                                   inadequate guards on machine, vibration
+3    Ergonomic                     Lifting, carrying, lowering, pulling, pushing, supporting, repetitive body
+                                   movement, posture (way of working).
+4    Fire / Explosion              Flammable / combustible material, gases, vapors, chemical reaction,
+                                   smoke, conductive dust, static electricity, short circuit
+5    Electrical                    Electrical shock, defective plug / sockets / wires / cables / switches,
+                                   exposed conductors, use of inappropriately rated instrument or improperly
+                                   protected instruments,
+6    Chemical                      Skin contact, Inhalation, Ingestion, Oxygen deficiency, Toxic gases,
+                                   Spillage
+7    Confined Space                Asphyxiation, explosion, restricted access
+8    Biological                    Pathological organisms (legionella, salmonella etc.) Biological fluids,
+                                   animal bite / sting, biomedical waste
+9    Pressure                      Pressure vessels / plant, compressed air /gas /liquid, vacuum plant
+10   Radiation                     Microwave or radio frequency, ultra violet, or Infra-red, Laser, X-ray, other
+                                   ionizing radiation, welding
+11   Vehicular                     Traffic, Mobiles (Cranes, Forklifts, Conveyor, jumbo) overturning or
+                                   malfunctioning
+12   Heat & Temperature            Hot surface, Hot liquid, Hot gas, Flame, Deep Liquid vessels, sumps,
+                                   welding spatters, cryogenic liquid
+13   Environmental                 Heat or Cold, extreme weather (cold, hot, wind, fog, rain etc.), noise,
+                                   vibration, illumination (Low or High), exposure to dust & fumes
+14   Natural Calamity              Building or structure collapse, earthquake, Fire following earthquake,
+                                   flooding or spillage following earthquake, flood / cloud burst cyclone /
+                                   Tsunami, Lightening, Storm (dust, Tornado, avalanches)
+15   Demographic                   Stampede, rioting, arson, dacoit, theft, civil unrest, terrorism sabotage
+16   Human Factors /               Personal Factor, Behavioral, Vision, hearing, Blood pressure, Lumbago,
+     Behavioral issues             epilepsy, joint pain, psychological, imbalances, horseplay
+
+
+
+
+TATA MOTORS LIMITED-For Internal Circulation Only                                                Page 33 of 39
+                                  Corporate Safety, Health and Environment
+                               Hazard Identification & Risk Assessment (HIRA)
+                                   Document Number: TML/SHE/HIRA/2025:1
+
+
+
+
+       A.2        DETERMINING RISK LIKELIHOOD
+
+      Parameter                                        Description                                   Score
+                          Rare.               Very low chance of occurrence                            2
+ Likelihood of            Occasional          Has / Can happen once in 3 years                         3
+ Occurrence of                                Has / Can happen once in a year or leading to
+                          Probable                                                                     4
+ Hazardous event                              any over-riding criteria
+                          Frequent            Has / Can happen several times in a year.                5
+
+
+       A.3        DETERMINING SCALE OF RISK
+      Parameter                                                     Description                      Score
+                          Only the work       Examples; Welding Area, Grinding Area, Machine
+                                                                                                       2
+                          area                area
+                          Within SHOP         Entire shop shed, adjoining machines, process or
+                                                                                                       3
+     Scale of Risk        Area                part of, is affected.
+                          Within Plant        Entire plant gets affected. Loss of production for
+                                                                                                       4
+                          Boundary            many days or leading to any over-riding criteria
+                          Outside Plant       The external population and organizational
+                                                                                                       5
+                          Boundary            reputation may get affected
+
+
+       A.4        DETERMINING LEVEL OF HARM
+
+  LEVEL OF                                             ASSET OR
+  HARM                        PEOPLE                ENVIRONMENTAL         EXPOSURE LEVEL             SCORE
+                                                       DAMAGE
+                     Momentary Discomfort /
+  Insignificant                                                         Below prescribed
+                     inconvenience / Minor near     No damage                                              2
+                                                                        Standards
+                     miss case
+                                                                      Equal or above than
+  Harmful            Minor Health Effects / First
+                                                    Moderate damage   prescribed Standards;                3
+                     Aid Case
+                                                                      however <10%
+                                                                      Above than prescribed
+                     Medical Treatment Case /     Severe damages or
+  Very Harmful                                                        Standards;
+                     Restricted Work Case / Lost leading to any over-                                      4
+                                                                      however within 10% -
+                     Time Injury / HIPO           riding criteria
+                                                                      30%
+                     Fatal / Permanent Disability                     Above than prescribed
+  Extremely          / chronic diseases or        Annihilation        Standards;
+  Harmful            notifiable diseases. Major   (complete           AND > 50%, leading to             5
+                     incidents involving large    destruction)        chronic notifiable
+                     number of people                                 disease
+
+TATA MOTORS LIMITED-For Internal Circulation Only                                                  Page 34 of 39
+                                 Corporate Safety, Health and Environment
+                              Hazard Identification & Risk Assessment (HIRA)
+                                 Document Number: TML/SHE/HIRA/2025:1
+
+
+
+
+       A.5     DETERMINING NUMBER OF PEOPLE AFFECTED
+
+          Parameter           No. of people         Score
+                                affected
+                                   0-2                 2
+        Scale of Risk
+                                  3 - 10               3
+                                 11 – 100              4
+                               101 - Above             5
+
+
+       A.6     RISK LEVELS BASED ON RISK PRIORITY NUMBER (RPN)
+
+             Risk Level                                                      RISK PRIORY NUMBER
+                                                                                     16 to 36
+               Trivial
+                                           Acceptable Risk                           37 to 72
+             Tolerable
+                                                                                     73 to 130
+             Moderate
+                                           Unacceptable Risk                        131 to 250
+             Substantial
+                                                                                    251 to 625
+             Intolerable
+
+       A.7     LEVEL OF RISKS
+
+        Risk Level                                     Action and Time Scale
+
+    TRIVIAL                No action is required and no documentary record needs to be kept.
+
+                           No additional controls are required. Consideration may be given to an effective
+    TOLERABLE
+                           solution. Monitoring is required to ensure that the controls are maintained.
+
+                           Efforts should be made to reduce the risk to acceptable risk level by using
+    MODERATE
+                           hierarchy of controls.
+                           Work should not be started until the risk has been reduced. Considerable
+    SUBSTANTIAL            resources may have to be allocated to reduce the risk where the risk involves
+                           work in progress, urgent action should be taken.
+                           Work should not be started or continued until the risk has been reduced. If it is
+    INTOLERABLE            not possible to reduce risk even with unlimited resources, work has to remain
+                           prohibited.
+
+
+TATA MOTORS LIMITED-For Internal Circulation Only                                                Page 35 of 39
+                                Corporate Safety, Health and Environment
+                             Hazard Identification & Risk Assessment (HIRA)
+                                 Document Number: TML/SHE/HIRA/2025:1
+
+
+
+A-8 – List Of Activity Format
+
+
+
+
+TATA MOTORS LIMITED-For Internal Circulation Only                             Page 36 of 39
+                                Corporate Safety, Health and Environment
+                             Hazard Identification & Risk Assessment (HIRA)
+                                 Document Number: TML/SHE/HIRA/2025:1
+
+
+
+A.9 Format
+
+
+
+
+A.10 HIRA Register Format
+
+
+
+
+TATA MOTORS LIMITED-For Internal Circulation Only                             Page 37 of 39
+                                Corporate Safety, Health and Environment
+                             Hazard Identification & Risk Assessment (HIRA)
+                                 Document Number: TML/SHE/HIRA/2025:1
+
+
+
+A.11 Risk Perception + Tolerance Model
+
+
+
+
+TATA MOTORS LIMITED-For Internal Circulation Only                             Page 38 of 39
+                                Corporate Safety, Health and Environment
+                             Hazard Identification & Risk Assessment (HIRA)
+                                 Document Number: TML/SHE/HIRA/2025:1
+
+
+
+
+TATA MOTORS LIMITED-For Internal Circulation Only                             Page 39 of 39
+
