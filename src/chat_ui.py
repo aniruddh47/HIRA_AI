@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from datetime import datetime
+from io import BytesIO
 import json
 import os
 import re
@@ -13,6 +14,17 @@ try:
     from dotenv import load_dotenv
 except ImportError:
     load_dotenv = None
+
+try:
+    from openpyxl import Workbook
+    from openpyxl.styles import Alignment, Font, PatternFill
+    from openpyxl.utils import get_column_letter
+except ImportError:
+    Workbook = None
+    Alignment = None
+    Font = None
+    PatternFill = None
+    get_column_letter = None
 
 from bot_engine import assess_question, create_components
 
@@ -242,13 +254,78 @@ def _markdown_report_to_pdf(markdown_text: str) -> bytes:
     return bytes(pdf)
 
 
-def _report_filename(state: dict | None) -> str:
+def _markdown_report_to_excel(markdown_text: str) -> bytes:
+    """Render the generated Markdown tables as a simple Excel report."""
+    if Workbook is None or Alignment is None or Font is None or PatternFill is None or get_column_letter is None:
+        raise RuntimeError("openpyxl is required for Excel exports")
+
+    blocks = _parse_markdown_report(markdown_text)
+    workbook = Workbook()
+    sheet = workbook.active
+    sheet.title = "HIRA Report"
+
+    title_font = Font(bold=True, size=14)
+    heading_font = Font(bold=True, size=12)
+    header_font = Font(bold=True)
+    header_fill = PatternFill("solid", fgColor="DDEAF5")
+    wrap = Alignment(wrap_text=True, vertical="top")
+
+    generated_at = datetime.now().strftime("%d-%m-%Y %H:%M")
+    sheet.cell(row=1, column=1, value="TML HIRA Report").font = title_font
+    sheet.cell(row=2, column=1, value=f"Generated: {generated_at}")
+
+    row = 4
+    max_columns = 1
+
+    for block in blocks:
+        if block["type"] == "heading":
+            sheet.cell(row=row, column=1, value=block["text"]).font = heading_font
+            row += 2
+            continue
+
+        if block["type"] == "paragraph":
+            cell = sheet.cell(row=row, column=1, value=block["text"])
+            cell.alignment = wrap
+            row += 2
+            continue
+
+        if block["type"] != "table":
+            continue
+
+        header = block["header"]
+        rows = block["rows"]
+        max_columns = max(max_columns, len(header))
+
+        for col_index, value in enumerate(header, start=1):
+            cell = sheet.cell(row=row, column=col_index, value=value)
+            cell.font = header_font
+            cell.fill = header_fill
+            cell.alignment = wrap
+        row += 1
+
+        for data_row in rows:
+            for col_index, value in enumerate(data_row, start=1):
+                cell = sheet.cell(row=row, column=col_index, value=value)
+                cell.alignment = wrap
+            row += 1
+
+        row += 2
+
+    for col_index in range(1, max_columns + 1):
+        sheet.column_dimensions[get_column_letter(col_index)].width = 24
+
+    output = BytesIO()
+    workbook.save(output)
+    return output.getvalue()
+
+
+def _report_filename(state: dict | None, extension: str = "xlsx") -> str:
     activity = ""
     if isinstance(state, dict):
         activity = str(state.get("activity") or "")
     slug = re.sub(r"[^a-z0-9]+", "-", activity.lower()).strip("-")[:45] or "hira-report"
     timestamp = datetime.now().strftime("%Y%m%d-%H%M")
-    return f"{slug}-{timestamp}.pdf"
+    return f"{slug}-{timestamp}.{extension}"
 
 
 st.set_page_config(page_title="Tata Motors HIRA Bot", page_icon="TM", layout="wide")
@@ -513,12 +590,12 @@ if not GEMINI_API_KEY:
 for msg_index, msg in enumerate(st.session_state.messages):
     with st.chat_message(msg["role"]):
         st.markdown(msg["content"])
-        if msg.get("report_pdf"):
+        if msg.get("report_excel"):
             st.download_button(
-                "Download HIRA report PDF",
-                data=msg["report_pdf"],
-                file_name=msg.get("report_filename", "hira-report.pdf"),
-                mime="application/pdf",
+                "Download HIRA report Excel",
+                data=msg["report_excel"],
+                file_name=msg.get("report_filename", "hira-report.xlsx"),
+                mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
                 key=f"download-report-{msg_index}",
             )
 
@@ -544,15 +621,15 @@ if user_task:
         st.markdown(result["answer"])
         assistant_message = {"role": "assistant", "content": result["answer"]}
         if result.get("completed"):
-            report_pdf = _markdown_report_to_pdf(result["answer"])
-            report_filename = _report_filename(result.get("state"))
-            assistant_message["report_pdf"] = report_pdf
+            report_excel = _markdown_report_to_excel(result["answer"])
+            report_filename = _report_filename(result.get("state"), extension="xlsx")
+            assistant_message["report_excel"] = report_excel
             assistant_message["report_filename"] = report_filename
             st.download_button(
-                "Download HIRA report PDF",
-                data=report_pdf,
+                "Download HIRA report Excel",
+                data=report_excel,
                 file_name=report_filename,
-                mime="application/pdf",
+                mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
                 key=f"download-report-new-{len(st.session_state.messages)}",
             )
 
