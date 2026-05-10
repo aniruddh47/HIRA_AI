@@ -258,29 +258,63 @@ def _infer_hazards(activity: str) -> list[dict[str, str]]:
         if hazard_type not in [item["hazard_type"] for item in hazards]:
             hazards.append({"hazard_type": hazard_type, "description": description or HAZARDS[hazard_type]})
 
+    if "office" in text or "desk" in text or "computer" in text:
+        add("Ergonomic", "Sustained sitting, poor posture or repetitive keyboard/mouse use.")
+        add("Electrical", "Sockets, adapters, chargers or extension boards may cause shock or overheating.")
+        add("Fire / Explosion", "Overloaded electrical circuits or paper storage can raise fire risk.")
+        add("Environmental", "Glare, poor lighting or ventilation can cause discomfort or errors.")
+        add("Gravity", "Slip, trip or fall due to cables, clutter or wet floor.")
+
     keyword_map = {
-        "Gravity": ("height", "ladder", "roof", "platform", "fall", "slip", "trip", "overturn"),
-        "Machinery / Tool": ("machine", "press", "robot", "conveyor", "tool", "fixture", "drill", "grind", "guard"),
-        "Ergonomic": ("manual", "lift", "carry", "push", "pull", "repetitive", "posture", "lower"),
-        "Fire / Explosion": ("weld", "spark", "flame", "flammable", "combustible", "gas cutting", "short circuit"),
-        "Electrical": ("electric", "panel", "cable", "wire", "transformer", "live", "voltage", "socket"),
-        "Chemical": ("chemical", "solvent", "paint", "acid", "alkali", "fume", "toxic", "spill"),
-        "Confined Space": ("tank", "pit", "vessel", "manhole", "confined", "restricted access"),
-        "Biological": ("waste", "sewage", "bio", "contaminated", "medical", "animal"),
-        "Pressure": ("pressure", "hydraulic", "pneumatic", "cylinder", "compressed", "vacuum"),
+        "Gravity": (
+            "height", "ladder", "roof", "platform", "fall", "slip", "trip", "overturn", "stair", "scaffold", "edge"
+        ),
+        "Machinery / Tool": (
+            "machine", "press", "robot", "conveyor", "tool", "fixture", "drill", "grind", "guard",
+            "maintenance", "repair", "install", "alignment", "calibration", "inspection", "cutting"
+        ),
+        "Ergonomic": (
+            "manual", "lift", "carry", "push", "pull", "repetitive", "posture", "lower", "handling", "awkward"
+        ),
+        "Fire / Explosion": (
+            "weld", "spark", "flame", "flammable", "combustible", "gas cutting", "hot work", "short circuit", "lpg", "fuel"
+        ),
+        "Electrical": (
+            "electric", "panel", "cable", "wire", "transformer", "live", "voltage", "socket", "switchgear", "mccb", "db"
+        ),
+        "Chemical": (
+            "chemical", "solvent", "paint", "acid", "alkali", "fume", "toxic", "spill", "cleaning", "oil", "grease"
+        ),
+        "Confined Space": (
+            "tank", "pit", "vessel", "manhole", "confined", "restricted access", "chamber"
+        ),
+        "Biological": ("waste", "sewage", "bio", "contaminated", "medical", "animal", "blood"),
+        "Pressure": (
+            "pressure", "hydraulic", "pneumatic", "cylinder", "compressed", "vacuum", "air line"
+        ),
         "Radiation": ("xray", "x-ray", "radiation", "radiography", "laser", "uv", "infrared"),
-        "Vehicular": ("forklift", "truck", "vehicle", "crane", "mobile equipment", "traffic"),
-        "Heat & Temperature": ("heat", "temperature", "steam", "furnace", "hot surface", "cryogenic"),
-        "Environmental": ("dust", "noise", "rain", "wind", "fog", "illumination", "vibration"),
+        "Vehicular": (
+            "forklift", "truck", "vehicle", "crane", "mobile equipment", "traffic", "driving", "transport", "loading"
+        ),
+        "Heat & Temperature": (
+            "heat", "temperature", "steam", "furnace", "hot surface", "cryogenic", "burn"
+        ),
+        "Environmental": (
+            "dust", "noise", "rain", "wind", "fog", "illumination", "vibration", "lighting", "glare", "ventilation"
+        ),
         "Natural Calamity": ("earthquake", "flood", "storm", "lightning", "cyclone", "collapse"),
         "Demographic": ("public", "visitor", "crowd", "riot", "terrorism", "sabotage"),
-        "Human Factors / Behavioral issues": ("fatigue", "rush", "night", "handover", "communication", "horseplay"),
+        "Human Factors / Behavioral issues": (
+            "fatigue", "rush", "night", "handover", "communication", "horseplay", "assumption", "deviation"
+        ),
     }
     for hazard_type, words in keyword_map.items():
         if any(word in text for word in words):
             add(hazard_type)
 
     if not hazards:
+        add("Ergonomic", "Awkward postures, repetitive motions or manual handling may cause strain.")
+        add("Gravity", "Slip, trip or fall hazard due to walkways, tools, cables or uneven surfaces.")
         add("Human Factors / Behavioral issues", "Human behavior, assumptions, communication gaps or procedural deviation may affect safe execution.")
     return hazards
 
@@ -602,6 +636,8 @@ def _apply_biw_reference(state: dict[str, Any]) -> None:
     rows = find_hira_rows(activity_text, limit=8)
     activity = find_activity(activity_text)
 
+    existing_hazards = list(state.get("hazards", []))
+
     generic_only = (
         len(state["hazards"]) == 1
         and state["hazards"][0].get("hazard_type") == "Human Factors / Behavioral issues"
@@ -621,7 +657,17 @@ def _apply_biw_reference(state: dict[str, Any]) -> None:
             if len(hazards) >= 5:
                 break
         if hazards:
-            state["hazards"] = hazards
+            merged = list(hazards)
+            for item in existing_hazards:
+                if len(merged) >= 5:
+                    break
+                hazard_type = item.get("hazard_type")
+                description = item.get("description")
+                key = (hazard_type, description)
+                if key in {(haz.get("hazard_type"), haz.get("description")) for haz in merged}:
+                    continue
+                merged.append(item)
+            state["hazards"] = merged
 
     if rows:
         direct = next((row.direct_indirect for row in rows if row.direct_indirect), "")
@@ -655,10 +701,13 @@ def _apply_biw_reference(state: dict[str, Any]) -> None:
         state["overriding_criteria"] = sorted(set(criteria)) if criteria else _infer_overriding_criteria(_activity_text(state), state["hazards"])
 
     if rows:
-        state["existing_controls"] = _merge_unique([row.existing_controls for row in rows])
+        state["existing_controls"] = _merge_unique(
+            [row.existing_controls for row in rows],
+            fallback=state.get("existing_controls", ""),
+        )
 
     if rows:
-        gaps = _merge_unique([row.gaps for row in rows])
+        gaps = _merge_unique([row.gaps for row in rows], fallback=state.get("gaps", ""))
         state["gaps"] = gaps
 
     if rows:
@@ -925,6 +974,108 @@ def _md_cell(value: Any) -> str:
     return text or "-"
 
 
+def _tokenize(text: str) -> set[str]:
+    return set(re.findall(r"[a-z0-9]+", _normalize_text(text)))
+
+
+def _split_human_factors(description: str) -> list[str]:
+    cleaned = re.sub(r"\s+", " ", description.strip())
+    if "may affect safe execution" not in cleaned.lower():
+        return [cleaned] if cleaned else []
+    base = re.sub(r"\bmay affect safe execution\.?\b", "", cleaned, flags=re.IGNORECASE).strip()
+    parts = [part.strip() for part in re.split(r",|\bor\b|/|;|\band\b", base) if part.strip()]
+    if not parts:
+        return [cleaned]
+    return [f"{part} may affect safe execution." for part in parts]
+
+
+def _expanded_hazards(state: dict[str, Any]) -> list[dict[str, str]]:
+    hazards = []
+    for item in state.get("hazards", []):
+        hazard_type = str(item.get("hazard_type") or "").strip()
+        description = str(item.get("description") or "").strip()
+        if not hazard_type:
+            continue
+        if hazard_type == "Human Factors / Behavioral issues" and description:
+            for desc in _split_human_factors(description):
+                hazards.append({"hazard_type": hazard_type, "description": desc})
+            continue
+        hazards.append({"hazard_type": hazard_type, "description": description})
+    return hazards
+
+
+def _best_reference_row(hazard: dict[str, str], rows: list[HiraReferenceRow]) -> HiraReferenceRow | None:
+    hazard_type = _normalize_text(hazard.get("hazard_type", ""))
+    hazard_desc = _normalize_text(hazard.get("description", ""))
+    if not hazard_type:
+        return None
+    best = None
+    best_score = 0
+    hazard_tokens = _tokenize(hazard_desc)
+    for row in rows:
+        row_type = _normalize_text(_clean_hazard_type(row.hazard_type))
+        if row_type != hazard_type:
+            continue
+        row_desc = _normalize_text(row.description)
+        score = 5
+        if hazard_desc and (hazard_desc in row_desc or row_desc in hazard_desc):
+            score += 8
+        score += len(hazard_tokens.intersection(_tokenize(row_desc)))
+        if score > best_score:
+            best_score = score
+            best = row
+    return best
+
+
+def _hazard_assessments(state: dict[str, Any]) -> list[dict[str, Any]]:
+    activity_text = state.get("activity", "")
+    rows = find_hira_rows(activity_text, limit=8) if activity_text else []
+    hazards = _expanded_hazards(state)
+    assessments = []
+    override = [code for code in state.get("overriding_criteria", []) if code in OVERRIDING_CRITERIA]
+
+    for hazard in hazards:
+        reference = _best_reference_row(hazard, rows) if rows else None
+        likelihood = reference.likelihood_score if reference else state.get("likelihood_score")
+        scale = reference.scale_score if reference else state.get("scale_score")
+        harm = reference.harm_score if reference else state.get("harm_score")
+        people = reference.people_score if reference else state.get("people_score")
+        if None in (likelihood, scale, harm, people):
+            continue
+        severity = int(scale) * int(harm) * int(people)
+        rpn = int(likelihood) * severity
+        risk = _risk_level(rpn, override)
+        assessments.append(
+            {
+                "activity": state.get("activity", ""),
+                "hazard_type": hazard.get("hazard_type", ""),
+                "description": hazard.get("description", ""),
+                "affected_people": reference.affected_people if reference and reference.affected_people else state.get("affected_people", ""),
+                "outcome": reference.outcome if reference and reference.outcome else state.get("injury_or_ill_health", ""),
+                "direct_indirect": reference.direct_indirect if reference and reference.direct_indirect else state.get("direct_indirect", ""),
+                "routine_nonroutine": reference.routine_nonroutine if reference and reference.routine_nonroutine else state.get("routine_nonroutine", ""),
+                "overriding_criteria": override,
+                "existing_controls": reference.existing_controls if reference and reference.existing_controls else state.get("existing_controls", ""),
+                "gaps": reference.gaps if reference and reference.gaps else state.get("gaps", ""),
+                "likelihood": int(likelihood),
+                "scale": int(scale),
+                "harm": int(harm),
+                "people": int(people),
+                "severity": severity,
+                "rpn": rpn,
+                "risk_level": risk["level"],
+                "acceptability": risk["acceptability"],
+                "required_action": risk["action"],
+            }
+        )
+
+    return assessments
+
+
+def build_hazard_assessments(state: dict[str, Any]) -> list[dict[str, Any]]:
+    return _hazard_assessments(state)
+
+
 def _build_final_summary(state: dict[str, Any]) -> str:
     likelihood = int(state["likelihood_score"])
     scale = int(state["scale_score"])
@@ -948,11 +1099,12 @@ def _build_final_summary(state: dict[str, Any]) -> str:
         + [f"| {_md_cell(label)} | {_md_cell(value)} |" for label, value in detail_rows]
     )
 
+    hazards = _expanded_hazards(state)
     hazard_table = "\n".join(
         ["| Hazard type | Description |", "|---|---|"]
         + [
             f"| {_md_cell(item['hazard_type'])} | {_md_cell(item['description'])} |"
-            for item in state["hazards"]
+            for item in hazards
         ]
     )
 
@@ -963,6 +1115,28 @@ def _build_final_summary(state: dict[str, Any]) -> str:
     overriding_table = "\n".join(
         ["| Criteria | Meaning |", "|---|---|"]
         + [f"| {_md_cell(code)} | {_md_cell(description)} |" for code, description in overriding_rows]
+    )
+
+    per_hazard_rows = []
+    for item in _hazard_assessments(state):
+        severity_label = f"{item['scale']} x {item['harm']} x {item['people']}"
+        rpn_label = f"{item['likelihood']} x {item['severity']}"
+        per_hazard_rows.append(
+            (
+                item["hazard_type"],
+                item["description"],
+                severity_label,
+                rpn_label,
+                item["rpn"],
+                f"{item['risk_level']} ({item['acceptability']})",
+            )
+        )
+    per_hazard_table = "\n".join(
+        ["| Hazard type | Description | Severity | RPN formula | RPN | Risk level |", "|---|---|---:|---:|---:|---|"]
+        + [
+            f"| {_md_cell(hazard_type)} | {_md_cell(description)} | {_md_cell(severity)} | {_md_cell(rpn_formula)} | {_md_cell(rpn)} | {_md_cell(risk_level)} |"
+            for hazard_type, description, severity, rpn_formula, rpn, risk_level in per_hazard_rows
+        ]
     )
 
     risk_rows = [
@@ -1025,7 +1199,9 @@ def _build_final_summary(state: dict[str, Any]) -> str:
         f"{hazard_table}\n\n"
         "### Over-Riding Criteria\n"
         f"{overriding_table}\n\n"
-        "### Risk Calculation\n"
+        "### Risk Calculation (Per Hazard)\n"
+        f"{per_hazard_table}\n\n"
+        "### Risk Calculation (Overall)\n"
         f"{risk_table}\n\n"
         "### Control Measures\n"
         f"{control_table}\n\n"

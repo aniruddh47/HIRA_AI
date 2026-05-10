@@ -2,10 +2,12 @@
 
 from __future__ import annotations
 
+from copy import copy
 from datetime import datetime
 from io import BytesIO
 import json
 import os
+from pathlib import Path
 import re
 
 import streamlit as st
@@ -16,17 +18,13 @@ except ImportError:
     load_dotenv = None
 
 try:
-    from openpyxl import Workbook
-    from openpyxl.styles import Alignment, Font, PatternFill
-    from openpyxl.utils import get_column_letter
+    from openpyxl import load_workbook
+    from openpyxl.styles import Alignment
 except ImportError:
-    Workbook = None
+    load_workbook = None
     Alignment = None
-    Font = None
-    PatternFill = None
-    get_column_letter = None
 
-from bot_engine import assess_question, create_components
+from bot_engine import assess_question, build_hazard_assessments, create_components
 
 if load_dotenv:
     load_dotenv()
@@ -254,65 +252,91 @@ def _markdown_report_to_pdf(markdown_text: str) -> bytes:
     return bytes(pdf)
 
 
-def _markdown_report_to_excel(markdown_text: str) -> bytes:
-    """Render the generated Markdown tables as a simple Excel report."""
-    if Workbook is None or Alignment is None or Font is None or PatternFill is None or get_column_letter is None:
+def _excel_report_from_state(state: dict) -> bytes:
+    """Render the report into the BIW_MAINT template."""
+    if load_workbook is None:
         raise RuntimeError("openpyxl is required for Excel exports")
 
-    blocks = _parse_markdown_report(markdown_text)
-    workbook = Workbook()
-    sheet = workbook.active
-    sheet.title = "HIRA Report"
+    template_path = Path(__file__).resolve().parent.parent / "data" / "BIW_MAINT.xlsx"
+    workbook = load_workbook(template_path)
+    sheet = workbook["HIRA"]
 
-    title_font = Font(bold=True, size=14)
-    heading_font = Font(bold=True, size=12)
-    header_font = Font(bold=True)
-    header_fill = PatternFill("solid", fgColor="DDEAF5")
-    wrap = Alignment(wrap_text=True, vertical="top")
+    # Drop residual risk assessment section (columns T:Y / 20-25).
+    sheet.delete_cols(20, 6)
 
-    generated_at = datetime.now().strftime("%d-%m-%Y %H:%M")
-    sheet.cell(row=1, column=1, value="TML HIRA Report").font = title_font
-    sheet.cell(row=2, column=1, value=f"Generated: {generated_at}")
+    activity = str(state.get("activity") or "").strip()
+    if activity:
+        sheet["A8"].value = f"Process / Activity : {activity}"
 
-    row = 4
-    max_columns = 1
+    base_row = 15
+    max_cols = 19
+    base_styles = []
+    for col in range(1, max_cols + 1):
+        cell = sheet.cell(row=base_row, column=col)
+        base_styles.append(
+            {
+                "font": copy(cell.font),
+                "border": copy(cell.border),
+                "fill": copy(cell.fill),
+                "number_format": cell.number_format,
+                "protection": copy(cell.protection),
+                "alignment": copy(cell.alignment),
+            }
+        )
 
-    for block in blocks:
-        if block["type"] == "heading":
-            sheet.cell(row=row, column=1, value=block["text"]).font = heading_font
-            row += 2
-            continue
+    if sheet.max_row >= base_row:
+        sheet.delete_rows(base_row, sheet.max_row - base_row + 1)
 
-        if block["type"] == "paragraph":
-            cell = sheet.cell(row=row, column=1, value=block["text"])
-            cell.alignment = wrap
-            row += 2
-            continue
+    hazards = build_hazard_assessments(state)
+    current_row = base_row
+    for index, item in enumerate(hazards):
+        activity_value = activity if index == 0 else ""
+        direct_flag = "D" if str(item.get("direct_indirect") or "").lower().startswith("d") else "I"
+        routine_text = str(item.get("routine_nonroutine") or "")
+        routine_flag = "R" if routine_text.lower().startswith("r") else "NR"
+        override = [code for code in item.get("overriding_criteria", []) if code]
+        override_text = "/".join(override)
+        acceptable = "YES" if item.get("acceptability") == "Acceptable Risk" else "NO"
+        additional_controls = item.get("required_action") if acceptable == "NO" else ""
 
-        if block["type"] != "table":
-            continue
+        values = [
+            activity_value,
+            item.get("hazard_type", ""),
+            item.get("description", ""),
+            _affected_people_label(item.get("affected_people", "")),
+            item.get("outcome", ""),
+            direct_flag,
+            routine_flag,
+            override_text,
+            item.get("existing_controls", ""),
+            item.get("gaps", ""),
+            item.get("likelihood", ""),
+            item.get("scale", ""),
+            item.get("harm", ""),
+            item.get("people", ""),
+            item.get("rpn", ""),
+            item.get("risk_level", ""),
+            acceptable,
+            additional_controls,
+            "",
+        ]
 
-        header = block["header"]
-        rows = block["rows"]
-        max_columns = max(max_columns, len(header))
+        for col, value in enumerate(values, start=1):
+            cell = sheet.cell(row=current_row, column=col, value=value)
+            style = base_styles[col - 1]
+            cell.font = copy(style["font"])
+            cell.border = copy(style["border"])
+            cell.fill = copy(style["fill"])
+            cell.number_format = style["number_format"]
+            cell.protection = copy(style["protection"])
+            cell.alignment = copy(style["alignment"])
 
-        for col_index, value in enumerate(header, start=1):
-            cell = sheet.cell(row=row, column=col_index, value=value)
-            cell.font = header_font
-            cell.fill = header_fill
-            cell.alignment = wrap
-        row += 1
+            if Alignment is not None and col in {1, 3, 9, 10, 18, 19}:
+                cell.alignment = Alignment(wrap_text=True, vertical="top", horizontal="left")
 
-        for data_row in rows:
-            for col_index, value in enumerate(data_row, start=1):
-                cell = sheet.cell(row=row, column=col_index, value=value)
-                cell.alignment = wrap
-            row += 1
+        current_row += 1
 
-        row += 2
-
-    for col_index in range(1, max_columns + 1):
-        sheet.column_dimensions[get_column_letter(col_index)].width = 24
+        current_row += 1
 
     output = BytesIO()
     workbook.save(output)
@@ -327,6 +351,15 @@ def _report_filename(state: dict | None, extension: str = "xlsx") -> str:
     timestamp = datetime.now().strftime("%Y%m%d-%H%M")
     return f"{slug}-{timestamp}.{extension}"
 
+def _affected_people_label(value: str) -> str:
+    cleaned = re.sub(r"\s+", " ", str(value).strip().lower())
+    if not cleaned:
+        return "Emp"
+    if "both" in cleaned:
+        return "Both"
+    if "public" in cleaned or "visitor" in cleaned or "contractor" in cleaned:
+        return "Public"
+    return "Emp"
 
 st.set_page_config(page_title="Tata Motors HIRA Bot", page_icon="TM", layout="wide")
 
@@ -337,7 +370,7 @@ st.markdown(
         --tml-blue: #123c69;
         --tml-teal: #0f766e;
         --ink: #102033;
-        --muted: #5f6b7a;
+        _affected_people_label(item.get("affected_people", "")),
         --line: #d8e1ea;
         --soft: #f4f8fb;
         --warning: #f59e0b;
@@ -621,7 +654,7 @@ if user_task:
         st.markdown(result["answer"])
         assistant_message = {"role": "assistant", "content": result["answer"]}
         if result.get("completed"):
-            report_excel = _markdown_report_to_excel(result["answer"])
+            report_excel = _excel_report_from_state(result.get("state") or {})
             report_filename = _report_filename(result.get("state"), extension="xlsx")
             assistant_message["report_excel"] = report_excel
             assistant_message["report_filename"] = report_filename
